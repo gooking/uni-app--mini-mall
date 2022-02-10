@@ -10,9 +10,13 @@
 
 如果觉得本项目对你有帮助，欢迎打赏～
 
-| 微信小程序 | h5 | Android | ios
-| :------: | :------: | :------: | :------: |
-| <img src="https://dcdn.it120.cc/2021/10/26/17c24b13-d8bf-45c9-a05f-f1da2db15c8c.jpeg" height="250px"> | <img src="https://7.s2m.cc/2022/02/10/7d64d22a-e8df-4a3f-a4bd-e225ab75a664.png" height="250px"> | <img src="https://7.s2m.cc/2022/02/10/8a821d64-9fdf-4db0-9a26-f88821059406.png" height="250px"> | <img src="https://7.s2m.cc/2022/02/10/eea560d0-6ede-470b-8a9a-68ed19e1984a.png" height="250px"> |
+| 微信小程序 | h5 | Android
+| :------: | :------: | :------: |
+| <img src="https://dcdn.it120.cc/2021/10/26/17c24b13-d8bf-45c9-a05f-f1da2db15c8c.jpeg" height="250px"> | <img src="https://7.s2m.cc/2022/02/10/7d64d22a-e8df-4a3f-a4bd-e225ab75a664.png" height="250px"> | <img src="https://7.s2m.cc/2022/02/10/8a821d64-9fdf-4db0-9a26-f88821059406.png" height="250px"> |
+
+| ios
+| :------: |
+| <img src="https://7.s2m.cc/2022/02/10/eea560d0-6ede-470b-8a9a-68ed19e1984a.png" height="250px"> |
 
 # 特别感谢
 
