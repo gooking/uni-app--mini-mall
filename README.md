@@ -22,7 +22,7 @@
 
 # 码云镜像
 
-- [ 码云地址 https://gitee.com/javazj/wechat-app-mall ](https://gitee.com/javazj/wechat-app-mall)
+- [ 码云地址 https://gitee.com/javazj/uni-app--mini-mall ](https://gitee.com/javazj/uni-app--mini-mall)
 
 # 其他开源uni-app项目推荐
 
