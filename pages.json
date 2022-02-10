@@ -1,0 +1,143 @@
+{
+	"easycom": {
+		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+	},
+	// "condition": { //模式配置，仅开发期间生效
+	// 	"current": 0, //当前激活的模式(list 的索引项)
+	// 	"list": [{
+	// 		"name": "test", //模式名称
+	// 		"path": "pages/componentsC/test/index", //启动页面，必选
+	// 		"query": "uuid=c4bba940-f69e-11ea-a419-6bafda9d095e&__id__=1" //启动参数，在页面的onLoad函数里面得到
+	// 	}]
+	// },
+	"pages": [
+		{
+		    "path" : "pages/index/index",
+		    "style": {
+				"navigationStyle": "custom"
+		    }
+		},
+		{
+		    "path" : "pages/goods/details",
+		    "style": {
+				"navigationBarTitleText": "商品详情"
+		    }
+		},
+		{
+		    "path" : "pages/goods/fav",
+		    "style": {
+				"navigationBarTitleText": "我的收藏"
+		    }
+		},
+		{
+		    "path" : "pages/address/index",
+		    "style": {
+				"navigationBarTitleText": "收货地址"
+		    }
+		},
+		{
+		    "path" : "pages/address/addSite",
+		    "style": {
+				"navigationBarTitleText": "收货地址"
+		    }
+		},
+		{
+		    "path" : "pages/to-pay-order/index",
+		    "style": {
+				"navigationBarTitleText": "确认订单"
+		    }
+		},
+		{
+		    "path" : "pages/category/index",
+		    "style": {
+				"navigationBarTitleText": "分类"
+		    }
+		},
+		{
+		    "path" : "pages/my/index",
+		    "style": {
+				"navigationStyle": "custom"
+		    }
+		},
+		{
+		    "path" : "pages/about/about",
+		    "style": {
+				"navigationBarTitleText": ""
+		    }
+		},
+		{
+		    "path" : "pages/order/index",
+		    "style": {
+				"navigationBarTitleText": "我的订单"
+		    }
+		},
+		{
+		    "path" : "pages/order/detail",
+		    "style": {
+				"navigationBarTitleText": "订单详情"
+		    }
+		},
+		{
+		    "path" : "pages/cart/index",
+		    "style": {
+				"navigationStyle": "custom"
+		    }
+		},
+		{
+		    "path" : "pages/login/login",
+		    "style": {
+				"navigationBarTitleText": "登陆"
+		    }
+		},
+		{
+		    "path" : "pages/login/reg",
+		    "style": {
+				"navigationBarTitleText": "注册新用户"
+		    }
+		},
+		{
+		    "path" : "pages/login/resetpwd",
+		    "style": {
+				"navigationBarTitleText": "忘记密码找回"
+		    }
+		}
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#FFFFFF"
+	},
+	"tabBar": {
+		"color": "#909399",
+		"selectedColor": "#303133",
+		"backgroundColor": "#FFFFFF",
+		"borderStyle": "black",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/images/tabbar/like-f.png",
+				"selectedIconPath": "static/images/tabbar/like-o.png",
+				"text": " "
+			},
+			{
+				"pagePath": "pages/category/index",
+				"iconPath": "static/images/tabbar/menu-f.png",
+				"selectedIconPath": "static/images/tabbar/menu-o.png",
+				"text": " "
+			},
+			{
+				"pagePath": "pages/cart/index",
+				"iconPath": "static/images/tabbar/cart-f.png",
+				"selectedIconPath": "static/images/tabbar/cart-o.png",
+				"text": " "
+			},
+			{
+				"pagePath": "pages/my/index",
+				"iconPath": "static/images/tabbar/user-f.png",
+				"selectedIconPath": "static/images/tabbar/user-o.png",
+				"text": " "
+			}
+		]
+	}
+}
