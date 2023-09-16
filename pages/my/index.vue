@@ -39,6 +39,7 @@
 		</u-grid>
 		<view class="u-m-t-20">
 			<u-cell-group>
+				<!-- <u-cell-item icon="calendar" title="工时统计" @click="go('/pages/kaoqin/boss')"></u-cell-item> -->
 				<u-cell-item icon="heart" title="我的收藏" @click="go('/pages/goods/fav')"></u-cell-item>
 				<u-cell-item icon="map" title="收货地址" @click="go('/pages/address/index')"></u-cell-item>
 				<u-cell-item icon="server-man" title="关于我们" @click="go('/pages/about/about?key=aboutus')"></u-cell-item>

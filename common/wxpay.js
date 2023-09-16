@@ -35,7 +35,8 @@ function wxpay(type, money, orderId, redirectUrl, data) {
   if (postData.nextAction) {
     postData.nextAction = JSON.stringify(postData.nextAction);  
   }
-  WXAPI.wxpay(postData).then(function (res) {
+  const url = store.state.sysconfigMap.wxpay_api_url
+  WXAPI.payVariableUrl(url ? url : '/pay/wx/wxapp', postData).then(function (res) {
     if (res.code == 0) {
       // 发起支付
       wx.requestPayment({

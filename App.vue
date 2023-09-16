@@ -5,10 +5,13 @@
 	export default {
 		globalData: {
 			subDomain: 'uniminishop',
-			version: '1.1.0',
-			sysconfigkeys: 'mallName'
+			version: '2.0.0',
+			sysconfigkeys: 'mallName,todayTip0,todayTip1,wxpay_api_url'
 		},
 		onLaunch() {
+			// this.$u.vuex('uid', 9659228)
+			// this.$u.vuex('token', '0b9f2675-297f-4a43-a10d-98b52ebd8152')
+			
 			this.$api.init(this.globalData.subDomain)
 			const _this = this
 			// 1.1.0版本之前关于http拦截器代码，已平滑移动到/common/http.interceptor.js中
@@ -89,13 +92,14 @@
 				// #endif
 			},
 			async checkHasLoginedH5() {
-				if (!this.token) {
+				const _this = this.$vm ? this.$vm : this
+				if (!_this.token) {
 					return false
 				}
 				// https://www.yuque.com/apifm/nu0f75/mp9f59
-				const res = await this.$api.checkToken(this.token)
+				const res = await _this.$api.checkToken(_this.token)
 				if (res.code != 0) {
-					this.$u.vuex('token', '')
+					_this.$u.vuex('token', '')
 					return false
 				}
 				return true

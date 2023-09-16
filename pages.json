@@ -100,6 +100,24 @@
 		    "style": {
 				"navigationBarTitleText": "忘记密码找回"
 		    }
+		},
+		{
+		    "path" : "pages/kaoqin/user",
+		    "style": {
+				"navigationBarTitleText": "工时考勤记录"
+		    }
+		},
+		{
+		    "path" : "pages/kaoqin/submit",
+		    "style": {
+				"navigationBarTitleText": "上报工时"
+		    }
+		},
+		{
+		    "path" : "pages/kaoqin/boss",
+		    "style": {
+				"navigationBarTitleText": "计时考勤统计"
+		    }
 		}
     ],
 	"globalStyle": {

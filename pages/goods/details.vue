@@ -65,6 +65,7 @@
 					<u-number-box slot="right" class="bjq" v-model="buyNumber" :min="buyNumMin" :max="buyNumMax">
 					</u-number-box>
 				</u-section>
+				<view class="mt32"></view>
 				<u-button v-if="action == 'cart'" class="submit" type="success" :disabled="buyNumber == 0 ? true : false" @click="addCart2">加入购物车</u-button>
 				<u-button v-if="action == 'buy'" class="submit" type="error" :disabled="buyNumber == 0 ? true : false" @click="buy2">立即购买</u-button>
 			</view>
@@ -145,7 +146,7 @@
 					this.goodsShow = true
 				} else {
 					// 直接加入购物车
-					const res = await this.$api.shippingCarInfoAddItem(this.token, this.goodsDetail.basicInfo.id, 1)
+					const res = await this.$api.shippingCarInfoAddItem(this.token, this.goodsDetail.basicInfo.id, this.goodsDetail.basicInfo.minBuyNumber)
 					if (res.code != 0) {
 						uni.showToast({
 							title: res.msg,
@@ -378,6 +379,22 @@
 					})
 					return
 				}
+				if (1==1) {
+					// 立即购买，始终显示弹出框选择购买数量
+					this.selectGoods = this.goodsDetail
+					this.selectGoodsPic = this.goodsDetail.basicInfo.pic
+					this.selectGoodsPrice = this.goodsDetail.basicInfo.minPrice
+					this.buyNumMin = this.goodsDetail.basicInfo.minBuyNumber
+					this.buyNumber = this.goodsDetail.basicInfo.minBuyNumber
+					this.buyNumMax = this.goodsDetail.basicInfo.stores
+					if (this.goodsDetail.basicInfo.hasAddition) {
+						// 获取可选配件
+						this.goodsAddition()
+					}
+					this.action = 'buy'
+					this.goodsShow = true
+					return
+				}
 				if (this.goodsDetail.basicInfo.propertyIds || this.goodsDetail.basicInfo.hasAddition) {
 					// 需要选择sku
 					this.selectGoods = this.goodsDetail
@@ -394,7 +411,7 @@
 					const goodsList = [{
 						goodsId: this.goodsDetail.basicInfo.id,
 						goodsName: this.goodsDetail.basicInfo.name,
-						number: 1,
+						number: this.goodsDetail.basicInfo.minBuyNumber,
 						pic: this.goodsDetail.basicInfo.pic,
 						price: this.goodsDetail.basicInfo.minPrice,
 						sku: [], // optionId optionName optionValueId optionValueName

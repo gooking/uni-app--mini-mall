@@ -13,12 +13,12 @@
 						<text v-for="(item2, index2) in item.sku" :key="'b' + index2">{{ item2.optionName }}:{{ item2.optionValueName }}/</text>
 						<text v-for="(item3, index3) in item.additions" :key="'c' + index3">{{ item3.pname }}:{{ item3.name }}/</text>
 					</view>
-				</view>
-				<view class="right">
-					<view class="price">
-						￥{{ item.price }}
+					<view class="right">
+						<view class="price">
+							￥{{ item.price }}
+						</view>
+						<view class="number">x{{ item.number }}</view>
 					</view>
-					<view class="number">x{{ item.number }}</view>
 				</view>
 			</view>
 			<view class="total">
@@ -293,6 +293,7 @@ export default {
 			}
 		}
 		.content {
+			flex: 1;
 			.title {
 				font-size: 28rpx;
 				line-height: 50rpx;

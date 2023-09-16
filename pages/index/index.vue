@@ -137,7 +137,7 @@
 					this.goodsShow = true
 				} else {
 					// 直接加入购物车
-					const res = await this.$api.shippingCarInfoAddItem(this.token, this.curGoods.id, 1)
+					const res = await this.$api.shippingCarInfoAddItem(this.token, this.curGoods.id, this.curGoods.minBuyNumber)
 					if (res.code != 0) {
 						uni.showToast({
 							title: res.msg,
