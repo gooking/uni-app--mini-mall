@@ -19,9 +19,9 @@
 				<uni-list-item title="统计时间" :rightText="'第' + (weekIndex + 1) + '周' + ' ' + dayBegin + ' ~ ' + dayEnd" clickable showArrow></uni-list-item>
 			</uni-list>
 		</picker>
-		<picker v-else-if="current == 2" @change="monthChange" :value="monthIndex" :range="monthList">
+		<picker v-else-if="current == 2" @change="monthChange" :value="monthIndex" :range="monthList" range-key="display">
 			<uni-list>
-				<uni-list-item title="统计时间" :rightText="(monthIndex + 1) + '月' + ' ' + dayBegin + ' ~ ' + dayEnd" clickable showArrow></uni-list-item>
+				<uni-list-item title="统计时间" :rightText="monthList[monthIndex].display + ' ' + dayBegin + ' ~ ' + dayEnd" clickable showArrow></uni-list-item>
 			</uni-list>
 		</picker>
 		<page-box-empty v-if="!list || list.length == 0" title="暂无工时统计" :show-btn="false" />
@@ -67,7 +67,7 @@
 				totalWeeks: dayjs().isoWeeksInYear(), // 一年总共有几周
 				weekIndex: dayjs().week() - 1, // 第几周
 				weekList: [],
-				monthIndex: dayjs().month(),
+				monthIndex: 11,
 				monthList:[],
 			}
 		},
@@ -84,8 +84,12 @@
 			for (let i = 1; i <= dayjs().week(); i++) {
 				this.weekList.push(`第${i}周`)
 			}
-			for (let i = 0; i <= dayjs().month(); i++) {
-				this.monthList.push(`${i + 1}月`)
+			for (let i = 11; i >= 0; i--) {
+				const d = dayjs().subtract(i, 'month')
+				this.monthList.push({
+					d,
+					display: `${d.year()}年${d.month() + 1}月`
+				})
 			}
 			this.workingHoursBossReport()
 		},
@@ -108,9 +112,10 @@
 			  }
 			  if (this.current == 2) {
 			  	// 按月
-				this.monthIndex = dayjs().month()
-			  	this.dayBegin = dayjs().month(this.monthIndex).startOf('month').format('YYYY-MM-DD')
-			  	this.dayEnd = dayjs().month(this.monthIndex).endOf('month').format('YYYY-MM-DD')
+				const d = this.monthList[11].d
+				this.monthIndex = 11
+			  	this.dayBegin = d.startOf('month').format('YYYY-MM-DD')
+			  	this.dayEnd = d.endOf('month').format('YYYY-MM-DD')
 			  }
 			  this.workingHoursBossReport()
 			},
@@ -187,8 +192,9 @@
 			},
 			monthChange(e) {
 				this.monthIndex = e.detail.value * 1
-				this.dayBegin = dayjs().month(this.monthIndex).startOf('month').format('YYYY-MM-DD')
-				this.dayEnd = dayjs().month(this.monthIndex).endOf('month').format('YYYY-MM-DD')
+				const d = this.monthList[this.monthIndex].d
+				this.dayBegin = d.startOf('month').format('YYYY-MM-DD')
+				this.dayEnd = d.endOf('month').format('YYYY-MM-DD')
 				this.workingHoursBossReport()
 			},
 		}
