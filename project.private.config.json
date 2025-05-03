@@ -1,0 +1,14 @@
+{
+  "libVersion": "3.8.3",
+  "projectname": "township-shopping-platform",
+  "setting": {
+    "urlCheck": true,
+    "coverView": true,
+    "lazyloadPlaceholderEnable": false,
+    "skylineRenderEnable": false,
+    "preloadBackgroundData": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "compileHotReLoad": true
+  }
+}

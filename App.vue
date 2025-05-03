@@ -4,8 +4,8 @@
 	// #endif
 	export default {
 		globalData: {
-			subDomain: 'uniminishop',
-			version: '2.0.0',
+			subDomain: 'huiMingJinPing',
+			version: '0.0.1',
 			sysconfigkeys: 'mallName,todayTip0,todayTip1,wxpay_api_url'
 		},
 		onLaunch() {

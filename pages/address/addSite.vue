@@ -147,7 +147,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-/deep/ .line {
+::v-deep .line {
 	color: $u-light-color;
 	font-size: 28rpx;
 }
